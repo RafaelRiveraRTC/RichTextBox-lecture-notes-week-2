@@ -6,7 +6,70 @@
         xmlns:local="clr-namespace:RichTextBox_lecture_notes_week_2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Canvas>
+        <Label x:Name="First_Name" Content="FirstName" 
+               Canvas.Left="118" 
+               Canvas.Top="87" RenderTransformOrigin="-1.248,1.619"/>
+        <TextBox x:Name="First" Canvas.Left="201" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Canvas.Top="91" 
+                 Width="120"/>
+        <Button Content="Submit and Display information" 
+                Canvas.Left="149" 
+                Canvas.Top="404" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Click="Info_Display"/>
+        <Label x:Name="Last_Name_" Content="LastName" 
+            Canvas.Left="118" 
+            Canvas.Top="125" RenderTransformOrigin="-1.248,1.619" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="Last" Canvas.Left="201" 
+            TextWrapping="Wrap" 
+            Text="" 
+            Canvas.Top="129" 
+            Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-    </Grid>
+        <!--Display the user full name after-->
+        <!--Added a label-->
+        <!--give our label a name-->
+        <!--In our .CS we are going to "wireup" our front
+        end to our back end code-->
+        <Label x:Name="LbL" 
+               Content="Label" 
+               Canvas.Left="400" 
+               Canvas.Top="36"/>
+        <RichTextBox Height="327" 
+                     Width="276" 
+                     TextChanged="RichTextBox_TextChanged" 
+                     Canvas.Left="514" Canvas.Top="72" 
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Top">
+            <FlowDocument>
+                <Paragraph>
+                    <!--We are going to name the run-->
+                    <Run 
+                        x:Name="runDisplay"
+                        Text="RichTextBox"/>
+
+
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox Height="207" 
+                     Width="320" 
+                     TextChanged="RichTextBox_TextChanged_1" 
+                     Canvas.Left="107" 
+                     Canvas.Top="192">
+            <FlowDocument>
+                <Paragraph>
+                    <Run 
+                        x:Name="runHomeInfo"
+                        Text="runHomeInfo"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="Address" Canvas.Left="124" Canvas.Top="161"/>
+
+
+    </Canvas>
 </Window>
